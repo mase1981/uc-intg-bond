@@ -1,7 +1,7 @@
 # Bond Integration for Unfolded Circle Remote
 
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
-[![GitHub release](https://img.shields.io/github/release/mase1981/uc-intg-bond.svg)](https://github.com/mase1981/uc-intg-bond/releases)
+[![GitHub release](https://img.shields.io/github/v/release/mase1981/uc-intg-bond.svg)](https://github.com/mase1981/uc-intg-bond/releases)
 
 Control your Bond-connected ceiling fans, fireplaces, and other RF/IR devices directly from your Unfolded Circle Remote.
 
