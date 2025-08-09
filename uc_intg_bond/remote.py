@@ -18,7 +18,7 @@ from uc_intg_bond.client import BondClient
 _LOG = logging.getLogger(__name__)
 
 
-class BondRemote:
+class BondRemote:  #this crap is complicated, my brain hurts
     """Bond remote entity with clean device-per-page organization."""
     
     def __init__(self, api: ucapi.IntegrationAPI, client: BondClient):
@@ -626,12 +626,30 @@ class BondRemote:
         if bond_action == "SetSpeed":
             # Default to speed 3 (medium) for ceiling fans
             return 3
+        elif bond_action == "IncreaseSpeed":
+            # Use step size of 1 for increment actions
+            return 1
+        elif bond_action == "DecreaseSpeed":
+            # Use step size of 1 for decrement actions  
+            return 1
         elif bond_action == "SetFlame":
             # Default to 50% flame for fireplaces
             return 50
+        elif bond_action == "IncreaseFlame":
+            # Use step size for flame increment
+            return 10
+        elif bond_action == "DecreaseFlame":
+            # Use step size for flame decrement
+            return 10
         elif bond_action == "SetBrightness":
             # Default to 75% brightness for lights
             return 75
+        elif bond_action == "IncreaseBrightness" or bond_action == "IncreaseBright":
+            # Use step size for brightness increment
+            return 10
+        elif bond_action == "DecreaseBrightness" or bond_action == "DecreaseBright":
+            # Use step size for brightness decrement
+            return 10
         elif bond_action == "SetDirection":
             # Default to forward (1) for ceiling fans
             return 1
