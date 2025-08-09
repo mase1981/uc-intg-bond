@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  bond-integration:
+    build: .
+    container_name: uc-intg-bond
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    environment:
+      - UC_CONFIG_HOME=/app/config
+      - UC_INTEGRATION_INTERFACE=0.0.0.0
+      - UC_INTEGRATION_HTTP_PORT=9090
+      - UC_DISABLE_MDNS_PUBLISH=false
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./config:/app/config:rw
+      - ./logs:/app/logs:rw
+    networks:
+      - bond-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9090/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  bond-network:
+    driver: bridge
+
+volumes:
+  bond-config:
+    driver: local
+  bond-logs:
+    driver: local

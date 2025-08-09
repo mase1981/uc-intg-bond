@@ -1,0 +1,49 @@
+{
+  "driver_id": "uc_intg_bond",
+  "version": "1.0.0",
+  "min_core_api": "0.21.0",
+  "name": {
+    "en": "Bond Smart Home Hub"
+  },
+  "description": {
+    "en": "Control Bond-connected ceiling fans, fireplaces, and other devices"
+  },
+  "icon": "uc:b",
+  "port": 9090,
+  "developer": {
+    "name": "Meir Miyara",
+    "email": "meir.miyara@gmail.com"
+  },
+  "home_page": "https://github.com/mase1981/uc-intg-bond",
+  "documentation": "https://github.com/mase1981/uc-intg-bond/blob/main/README.md",
+  "setup_data_schema": {
+    "title": {
+      "en": "Bond Hub Configuration"
+    },
+    "settings": [
+      {
+        "id": "bond_ip",
+        "label": {
+          "en": "Bond IP Address"
+        },
+        "field": {
+          "text": {
+            "placeholder": "Enter Bond IP (e.g., 192.168.1.100)"
+          }
+        }
+      },
+      {
+        "id": "bond_pin",
+        "label": {
+          "en": "Bond PIN (4 digits)"
+        },
+        "field": {
+          "text": {
+            "placeholder": "Enter PIN from device label (e.g., 1234)"
+          }
+        }
+      }
+    ]
+  },
+  "release_date": "2024-08-08"
+}

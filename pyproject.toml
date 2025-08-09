@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel~=0.40.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uc-intg-bond"
+version = "1.0.0"
+description = "Bond integration for Unfolded Circle Remote"
+readme = "README.md"
+license = { "text" = "MPL-2.0" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Meir Miyara", email = "meir.miyara@gmail.com" }
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Home Automation",
+]
+
+dependencies = [
+    "ucapi~=0.3.1",
+    "aiohttp",
+    "asyncio-mqtt",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mase1981/uc-intg-bond"
+"Bug Reports" = "https://github.com/mase1981/uc-intg-bond/issues"
+"Source" = "https://github.com/mase1981/uc-intg-bond"
+
+[tool.setuptools]
+platforms = ["any"]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["uc_intg_bond*"]
+
+[tool.setuptools.package-data]
+"uc_intg_bond" = ["*.json"]
